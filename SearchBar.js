@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
 
 export default class SearchBar extends React.Component {
   static propTypes = {
+	flex: PropTypes.number,
     height: PropTypes.number.isRequired,
     autoCorrect: PropTypes.bool,
     returnKeyType: PropTypes.string,
@@ -54,6 +55,7 @@ export default class SearchBar extends React.Component {
   };
 
   static defaultProps = {
+	flex: 1,
     onSearchChange: () => {},
     onEndEditing: () => {},
     onSubmitEditing: () => {},
@@ -124,6 +126,7 @@ export default class SearchBar extends React.Component {
 
   render() {
     const {
+	  flex,
       height,
       autoCorrect,
       returnKeyType,
@@ -150,7 +153,7 @@ export default class SearchBar extends React.Component {
     return (
       <View
         onStartShouldSetResponder={this._dismissKeyboard}
-        style={{padding: padding}}
+        style={{padding: padding, flex: flex}}
       >
         <View
           style={
