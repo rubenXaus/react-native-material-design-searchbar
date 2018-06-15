@@ -8,7 +8,7 @@ import {
   ActivityIndicator,
   Text,
 } from 'react-native';
-import FontAwesome, {Icons} from 'react-native-fontAwesome';
+import FontAwesome, {Icons} from 'react-native-fontawesome';
 import dismissKeyboard from 'react-native/Libraries/Utilities/dismissKeyboard';
 
 const styles = StyleSheet.create({
