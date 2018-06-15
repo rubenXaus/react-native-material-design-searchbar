@@ -8,7 +8,7 @@ import {
   ActivityIndicator,
   Text,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import FontAwesome, {Icons} from 'react-native-fontAwesome';
 import dismissKeyboard from 'react-native/Libraries/Utilities/dismissKeyboard';
 
 const styles = StyleSheet.create({
@@ -60,9 +60,9 @@ export default class SearchBar extends React.Component {
     onEndEditing: () => {},
     onSubmitEditing: () => {},
     inputStyle: {},
-    iconCloseName: 'md-close',
-    iconSearchName: 'md-search',
-    iconBackName: 'md-arrow-back',
+    iconCloseName: Icons.close,
+    iconSearchName: Icons.search,
+    iconBackName: Icons.arrowLeft,
     placeholder: 'Search...',
     returnKeyType: 'search',
     padding: 5,
@@ -172,22 +172,14 @@ export default class SearchBar extends React.Component {
                 { iconBackComponent ?
                   iconBackComponent
                   :
-                  <Icon
-                    name={iconBackName}
-                    size={height * 0.5}
-                    color={iconColor}
-                  />
+                    <FontAwesome style={{fontSize:height * 0.5, color:iconColor}}>{iconBackName}</FontAwesome>
                 }
               </TouchableOpacity>
             :
             ( iconSearchComponent ?
               iconSearchComponent
               :
-              <Icon
-                name={iconSearchName}
-                size={height * 0.5}
-                color={iconColor}
-              />
+                <FontAwesome style={{fontSize:height * 0.5, color:iconColor}}>{iconSearchName}</FontAwesome>
             )
           }
           <TextInput
@@ -218,11 +210,10 @@ export default class SearchBar extends React.Component {
               { iconCloseComponent ?
                 iconCloseComponent
                 :
-                <Icon
-                  style={{paddingRight: iconPadding }}
-                  name={iconCloseName} size={iconSize}
-                  color={iconColor}
-                />
+
+                <FontAwesome style={{paddingRight: iconPadding, fontSize: iconSize, color:iconColor }}>
+                    {iconCloseName}
+                </FontAwesome>
               }
             </TouchableOpacity>
           : null
